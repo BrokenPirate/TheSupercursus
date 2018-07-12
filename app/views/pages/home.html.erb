@@ -1,2 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+
+
+	</div>
+  
+  <div class="col-sm-offset-2 col-sm-8">
+  	<h1>All courses</h1>
+		
+		<% @courses.each do |course| %>
+
+			<div class="course">
+			  <div class='course-upvote'>
+			    <div class="course-arrow"></div>
+			    <div class='course-count'>95</div>
+			  </div>
+			  <img src="http://unsplash.it/200/150" class="course-image">
+			  <div class='course-body'>
+			    <h3><%= link_to course.name, course_path(course) %></h3>
+			    <p><%= course.tagline %></p>
+			  </div>
+			  <ul class="list-inline course-controls hidden-sm hidden-xs">
+			    <li><a href=""><i class="fa fa-heart"></i></a></li>
+			    <li><a href=""><i class="fa fa-share"></i></a></li>
+			    <li><a href=""><i class="fa fa-star"></i></a></li>
+			  </ul>
+			</div>
+		<% end %>
+		
+	</div>
+
+		
+	
+  
+ 
+</div>
+

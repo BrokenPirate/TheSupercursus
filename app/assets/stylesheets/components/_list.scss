@@ -1,0 +1,31 @@
+.course {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.course:hover {
+  background: rgb(240, 240, 240);
+}
+
+.course:hover .course-upvote {
+  font-size: 25px;
+}
+
+.course-upvote {
+  font-size: 20px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.course-description {
+  flex: 1 0 auto;
+  padding: 20px;
+}
+.course-controls a {
+  font-size: 15px;
+  color: #CCCCCC;
+}
