@@ -4,6 +4,7 @@
   padding: 20px;
   border-radius: 3px;
   transition: all 0.15s ease;
+  height: 110px;
 }
 
 /* Body design */
@@ -13,8 +14,13 @@
 .course-body h3 {
   font-weight: bold;
   font-size: 23px;
-  margin-top: 0;
+  margin-top: 0; 
 }
+
+.course-body h3:hover {
+    text-decoration: none;
+}
+
 .course-body p {
   font-weight: lighter;
   color: #999999;
@@ -25,7 +31,7 @@
 .course-image {
   border-radius: 10px;
   margin-right: 20px;
-  width: 175px;
+  width: 75px;
 }
 
 /* Upvote design */

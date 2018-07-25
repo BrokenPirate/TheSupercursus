@@ -1,34 +1,16 @@
-.card {
-  position: relative;
-  height: 250px;
-  background: linear-gradient(-225deg, rgba(163,191,237,0.6) 30%, rgba(255,68,68,0.5) 80%)
-  background-size: cover;
-  color: white;
-  border-radius: 30px;
-  
-}
-
-.card-user {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-.card-category {
-  position: absolute;
-  top: 12px;
-  left: 20px;
-}
-.card-description {
-  position: absolute;
-  bottom: 20px;
-  left: 30px;
+.card-features
+{
+	border: solid 1px;
+	padding: 30px;
+	position: relative;
+  	height: 200px;
+  	border-radius: 30px;
+  	overflow: auto; /* need to find the fucking way */
 }
 
 .card-small {
-  position: relative;
-  display: flex;
-  background: linear-gradient(-225deg, rgba(163,191,237,0.6) 30%, rgba(255,68,68,0.5) 80%)
-  background-size: cover;
-  color: white;
-  border-radius: 30px;
+	padding: 20px;
+  font-weight: lighter;
+  border: solid 1px;
+  border-radius: 10px;
 }

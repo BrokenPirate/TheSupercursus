@@ -8,8 +8,11 @@ class CoursesController < ApplicationController
 	end
 
 	def index
-		
+		if params[:category]
+			@courses = Course.where(category: params[:category])
+		else
 		@courses = Course.all
+		end
 	
 	end
 	def show

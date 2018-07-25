@@ -1,3 +1,5 @@
+
+
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
@@ -13,7 +15,15 @@
 
   
     <a href="" class="navbar-wagon-item navbar-wagon-link">Browse by Jobs</a>
+
+<% if user_signed_in? %>
+
     <a href="" class="navbar-wagon-item navbar-wagon-link">Ask recommendations</a>
+
+      <div class="btn btn-success"><%= link_to "Add a course", new_course_path, class:"navbar-wagon-item navbar-wagon-button btn btn-success" %> </div>
+
+
+
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
@@ -24,19 +34,26 @@
           <li><a href="#">Wishlist</a></li>
           <li><a href="#">Ask Recommendations</a></li>
           <li><a href="#">Orientation Test</a></li>
-          <%= link_to "Add a course", new_course_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <li><a href="#">Reference a course</a></li>
           <li><a href="#">Paths & My learning Plans</a></li>
+          <li><a href="#">Log Out</a>
         </ul>
       </div>
-    </div>
+   
+
+  <!-- Button, call to action -->
+
+ 
+
+<% else %>
+
+<%= link_to "Connexion", new_user_session_path %>
+<%= link_to "Inscription", new_user_registration_path %>
+
+<% end %>
+
+ </div>
   </div>
-
-  <!-- Button, call to action 
-
-  <%= link_to "Add a course", new_course_path, class:"navbar-wagon-item navbar-wagon-button btn btn-success" %> -->
-
-
-
 
   <!-- Dropdown appearing on mobile only 
   <div class="navbar-wagon-item hidden-md hidden-lg">

@@ -1,0 +1,13 @@
+<div class="category-filterbox">
+		<div class="filterbox-title">
+				<h4> COURSES CATEGORIES </h4>
+		</div>
+
+				<% @courses.each do |course| %>
+
+		<div class="list-category-filterbox">
+				<h4> <%= course.category %> </h4>
+		</div>
+
+				<% end %>
+</div>

@@ -1,3 +1,33 @@
+
+ .container-header {
+  margin-bottom: 30px;
+  padding: 5px;
+} 
+
+.container-course {
+  margin-top: 60px;
+}
+
+.features-row {
+  margin-top: 20px;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-section-header {
+  padding-left: 30px;
+}
+
+.divider {
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
 .course {
   display: flex;
   justify-content: space-between;
@@ -7,8 +37,23 @@
   border-radius: 3px;
 }
 
+.course h3 {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+
+
+.course p {
+  margin-bottom: 4px;
+}
+
 .course:hover {
   background: rgb(240, 240, 240);
+}
+
+.course a:hover {
+  text-decoration: none;
 }
 
 .course:hover .course-upvote {
@@ -26,6 +71,46 @@
   padding: 20px;
 }
 .course-controls a {
-  font-size: 15px;
+  font-size: 16px;
   color: #CCCCCC;
 }
+
+.badge {
+  font-weight: lighter;
+  padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 13px;
+  background-color: rgba(17, 117, 204,0.35);
+}
+
+.category-filterbox {
+  border-left: solid 1px rgb(242, 248, 253);
+  
+  padding: 20px;
+  float: left;
+
+}
+
+
+
+.category-filterbox h5 {
+  border: solid 1px;
+  
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 18px;
+
+}
+
+.category-filterbox h5:hover {
+  background-color: rgba(117, 195, 255,0.1);
+  font-size: 19px;
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+

@@ -1,36 +1,118 @@
-<div class="container">
+<div class="container-header">
 
 
-	</div>
-  
-  <div class="col-sm-offset-2 col-sm-8">
-  	<h1>All courses</h1>
-		
-		<% @courses.each do |course| %>
-
-			<div class="course">
-			  <div class='course-upvote'>
-			    <div class="course-arrow"></div>
-			    <div class='course-count'>95</div>
-			  </div>
-			  <img src="http://unsplash.it/200/150" class="course-image">
-			  <div class='course-body'>
-			    <h3><%= link_to course.name, course_path(course) %></h3>
-			    <p><%= course.tagline %></p>
-			  </div>
-			  <ul class="list-inline course-controls hidden-sm hidden-xs">
-			    <li><a href=""><i class="fa fa-heart"></i></a></li>
-			    <li><a href=""><i class="fa fa-share"></i></a></li>
-			    <li><a href=""><i class="fa fa-star"></i></a></li>
-			  </ul>
-			</div>
-		<% end %>
-		
+<div class="banner-list">
+	<div class="banner-list-header">
+		<h1>Find the best courses</h1>
+		<h4>We believe education is key to success</h4>
 	</div>
 
-		
-	
+
+    <div class="container">
+      <div class="row features-row">
+        <div class="hidden-xs col-sm-4">
+          <div class="card-features">
+           
+            <div class="card-features-description">
+              <h3>Review courses</h3>
+              <p>Give notes</p>
+            </div>
+          </div>
+        </div>
+        <div class="hidden-xs  col-sm-4">
+          <div class="card-features">
+            
+            <div class="card-features-description">
+              <h3>Ask recommendations</h3>
+              <p>Comment</p>
+            </div>
+          </div>
+        </div>
+        <div class="hidden-xs  col-sm-4">
+          <div class="card-features">
+            
+            <div class="card-features-description">
+              <h3>Reference a course</h3>
+              <p>Help community</p>
+            </div>
+          </div>
+        </div>
+      </div>
   
- 
+
 </div>
+
+<div class="container-course">
+  	<div class="col-md-8 course-list">
+  		<div class="course-section-header">
+
+  		<h3>Most recommended courses </h3>
+  		<p>Find the top courses to kickstart your career ! </p>
+  		<hr class="divider">
+
+  		</div>
+  		
+
+
+			<% @courses.each do |course| %>
+
+				<div class="course">
+
+						  <div class='course-upvote'>
+			   			 <div class="course-arrow"></div>
+			   			 <div class='course-count'>95</div>
+			  </div>
+
+
+			  <img src="http://unsplash.it/200/150" class="course-image">
+
+
+			  <div class='course-body'>
+			   			 <h3><%= link_to course.name, course_path(course) %></h3>
+			    		<p><%= course.tagline %></p>
+			   			 <span class="badge badge-light"><%=course.category.capitalize %></span>
+			  </div>
+
+			  		<ul class="list-inline course-controls hidden-sm hidden-xs">
+			    		<li><a href=""><i class="fa fa-heart"></i></a></li>
+			  		</ul>
+				</div>
+
+		<% end %>
+
+		
+		
+	</div>
+
+				<div class="col-md-4 aside">
+
+						<div class="card-small">
+							<h4>Hello, we are in beta</h4>
+							<p>Cursus.is is minimal now, we will launch the official website on September 1st.</p>
+						</div>
+
+
+
+						<div class="category-filterbox">
+							<div class="filterbox-title">
+								<h4> COURSES CATEGORIES </h4>
+							</div>
+
+								<% @courses.each do |course| %>
+
+							<div class="list-category-filterbox">
+								<h5> <%= course.category.capitalize %> </h5>
+							</div>
+
+								<% end %>
+				</div>
+
+				
+
+	</div>
+
+
+</div>
+
+
 
