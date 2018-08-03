@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.1'
+ruby '2.5.1'
 
 gem 'devise'
 gem 'figaro'
@@ -8,6 +8,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
+gem 'acts_as_commentable_with_threading'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

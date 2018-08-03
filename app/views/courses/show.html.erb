@@ -91,6 +91,12 @@
                             
                             
                         </div>
+
+<div class="comment-section">
+    <%= render partial: "comments/template", locals: {commentable: @course, new_comment: @comment} %> 
+</div> 
+
+
                     </main>
                 </div>
                 <div class="col-md-4">
