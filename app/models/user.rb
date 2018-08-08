@@ -5,4 +5,7 @@
          :recoverable, :rememberable, :trackable, :validatable
 
          has_many :upvotes
+
+	    has_many :asks, dependent: :destroy
+	    has_many :topics, through: :asks
 end

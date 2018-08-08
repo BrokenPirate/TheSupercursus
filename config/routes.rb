@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :topics
   resources :asks
   mount Attachinary::Engine => "/attachinary"
   devise_for :users, controllers: {
@@ -15,7 +16,9 @@ Rails.application.routes.draw do
 
 
     get 'ask/index'
-    resources :ask
+    resources :ask do 
+      resource :replies
+    end
 
   get "/team" => "pages#team"
   get "/contact" => "pages#join_us"

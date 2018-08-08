@@ -1,0 +1,44 @@
+<div class="column is-8">
+  <h3 class="title is-5 has-text-grey-light">Latest Discussions</h3>
+
+  <div class="asks">
+<%= link_to 'Ask Recommendation', new_ask_path, class:'button is-info' %>
+<hr />
+
+    <% @asks.each do |ask| %>
+      <div class="columns bb-not-last pv10">
+        <div class="column is-1">
+          <img src="http://placehold.it/50x50" alt="" class="avatar ask">
+
+
+
+        </div>
+        <div class="column is-8">
+          <%= link_to ask do %>
+            <h3 class="title is-5"><%= ask.title %></h3>
+          <% end %>
+          <div class="content">
+            <%= truncate(ask.content, length: 140) %>
+            <p><em><small>Posted <%= time_ago_in_words(ask.created_at) %> ago in
+              <% if @topic %>
+                <%= link_to ask.topic.topic, ask.topic %>
+              <% end %>
+              by <%= ask.user_id.username %>
+              </small>
+              </em>
+            </p>
+          </div>
+        </div>
+
+        <% # if  ask_author(ask) || has_role?(:admin) %>
+        <div class="column has-text-right">
+          <%= link_to 'Edit', edit_ask_path(ask), class:'button' %>
+          <%= link_to 'Delete', ask, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        </div>
+        <% # end %>
+
+      </div>
+    <% end %>
+    
+  </div>
+</div>

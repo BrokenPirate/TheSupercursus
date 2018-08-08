@@ -1,9 +1,4 @@
-class AsksController < ApplicationController
-  before_action :set_ask, only: [:show, :edit, :update, :destroy]
-  before_action :find_topics, only: [:index, :show, :new, :edit]
-  before_action :authenticate_user!, except: [:index, :show]
-
-  # GET /asks
+# GET /asks
   # GET /asks.json
   def index
     @asks = Ask.all.order('created_at desc')
@@ -13,7 +8,6 @@ class AsksController < ApplicationController
   # GET /asks/1.json
   def show
     @asks = Ask.all.order('created_at desc')
-    @asks = Ask.find(params[:id])
   end
 
   # GET /asks/new
