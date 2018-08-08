@@ -23,6 +23,16 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'faker'
 
+gem 'turbolinks', '~> 5'
+gem 'bulma-rails', '~> 0.6.2'
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'rolify', '~> 5.2'
+gem 'cancancan', '~> 2.1', '>= 2.1.3'
+gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+gem 'redcarpet', '~> 3.4'
+gem 'coderay', '~> 1.1', '>= 1.1.2'
+
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -30,4 +40,8 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+    gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'guard', '~> 2.14', '>= 2.14.2'
+  gem 'guard-livereload', '~> 2.5', require: false
 end

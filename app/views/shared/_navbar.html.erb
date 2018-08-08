@@ -17,7 +17,7 @@
 
 <% if user_signed_in? %>
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Ask recommendations</a>
+    <%= link_to "Ask Recommendations", asks_path %>
 
       <div class="btn btn-success"><%= link_to "Add a course", new_course_path, class:"navbar-wagon-item navbar-wagon-button btn btn-success" %> </div>
 
@@ -31,7 +31,7 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to "Profile", edit_user_registration_path %> </a></li>
           <li><a href="#">Wishlist</a></li>
-          <li><a href="#">Ask Recommendations</a></li>
+          <li><%= link_to "Ask Recommendations", asks_path %></li>
           <li><a href="#">Orientation Test</a></li>
           <li><a href="#">Reference a course</a></li>
           <li><a href="#">Paths & My learning Plans</a></li>
