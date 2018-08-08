@@ -3,5 +3,6 @@
 	<%= f.input :tagline, placeholder: "Course tagline"  %>
 	<%= f.input :url, placeholder: "URL" %>
 	<%= f.input :category, collection:["business", "coaching", "cooking", "education","construction", "ecology", "marketing", "management", "coding", "webdevelopment", "finances", "health", "hospitality", "travel", "sport", "photography", "videomaking"], prompt: "Select course category" %>
+	<%= f.input :photo, as: :attachinary %>
 	<%= f.button :submit, "Lister le cours", class: "btn btn-primary" %>
 	<% end %>

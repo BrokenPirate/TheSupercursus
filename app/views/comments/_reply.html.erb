@@ -1,6 +1,9 @@
 <% comments.each do |comment| %>  
   <div class="comments-show">
     <div class="comment">
+
+       <small>
+        Submitted <%= time_ago_in_words(comment.created_at) %> ago by <%= User.find(comment.user_id).first_name %></small>
       <p><%= comment.body %><br></p>
       <div class="comment-nav"><a href="#" class="comment-reply">reply</a></div>
       <div class="reply-form">

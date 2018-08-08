@@ -9,4 +9,7 @@
     message: "%{value} is not a valid category" }
 
     acts_as_commentable
+    has_attachment :photo
+    belongs_to :user
+    has_many :upvotes
 end

@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  mount Attachinary::Engine => "/attachinary"
+  devise_for :users, controllers: {
+        sessions: 'user/sessions'
+
+      }
+    
   root to: 'pages#home'
   
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -18,7 +25,11 @@ Rails.application.routes.draw do
 
   resources :courses
   resources :users
+   devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   resources :comments, only: :create
+
 
 
 

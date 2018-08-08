@@ -6,3 +6,6 @@ puts 'Creating course...'
   )
 end
 puts 'Finished!'
+
+
+Upvote.create!(user :?, product: ?)
