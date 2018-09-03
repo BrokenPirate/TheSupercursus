@@ -1,14 +1,68 @@
-<p id="notice"><%= notice %></p>
+<div class="columns">
 
-<p>
-  <strong>Title:</strong>
-  <%= @ask.title %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @ask.content %>
-</p>
 
-<%= link_to 'Edit', edit_ask_path(@ask) %> |
-<%= link_to 'Back', asks_path %>
+  <div class="column is-8 ask">
+
+
+
+
+
+
+  	<div class="ask-heading">	
+  		<div class="ask-heading-user">
+  			<div class="ask-heading-user-image">
+  				<a><img src="http://placehold.it/60x60" alt="" class="avatar ask"></a>
+  			</div>
+
+  				<div class="ask-heading-user-info">
+  					
+  						<%= link_to @ask.user.username unless @ask.user.blank? %>
+  						<span>User tagline</span>
+  				</div>
+  			</div>
+  			<div class="ask-heading-topic">
+  				<%= link_to @ask.topic.topic , @ask.topic %>
+  			</div>
+  		</div>
+
+  		<% if ask_author(@ask) %>
+        <div class="buttons ask-controls">
+            <%= link_to 'Edit Discussion', edit_ask_path(@ask), class:'button'%>
+            <%= link_to 'Delete', ask_path(@ask), method: :delete, data: { confirm: "Delete ask?" }, class:'button' %>
+        </div>
+        <% end %>
+
+
+    <h1 class="title is-2 has-text-grey ask-title ask-title"><%= @ask.title %></h1>
+    
+    <div class="level">
+      <div class="level-left"></div>
+      <div class="level-right">
+        
+      </div>
+    </div>
+    <div class="content ask-content"><%= @ask.content %></div>
+
+<h2 class="subtitle is-5 has-text-grey ask-reply-info"><%=  @ask.replies.count %> Replies</h2>
+
+    <div id="ask-replies">
+
+       <%= render @ask.replies %> 
+ </div> 
+
+    <hr />
+
+   <h3 class="subtitle is-3 has-text-grey ask-leaveareply">Leave a reply</h3>
+     <%  if user_signed_in? %>
+      <%=   render 'replies/form' %>
+    <%  else %>
+    <p>To reply you need to <%= link_to 'login', new_user_session_path %>. Don't have an account?
+      <%= link_to 'Sign up', new_user_registration_path %> for one.</p>
+    <%  end %>  
+
+  </div> 
+
+  <%= render 'sidebar' %>
+
+</div>

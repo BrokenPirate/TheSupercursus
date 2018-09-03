@@ -1,0 +1,43 @@
+.new_ask
+{
+	margin: 80px;
+}
+
+.new_ask button {
+	margin-top: 20px;
+}
+
+.new_ask label {
+	display: none;
+}
+
+.new_ask h1
+{
+	margin-bottom: 30px;
+	font-size: 2.5rem;
+}
+
+.new_ask button
+{
+	padding-bottom: 30px;
+}
+
+.avatar {
+	border-radius: 50px;
+}
+
+.ask-heading {
+	align-items: flex-start;
+	display: flex;
+}
+
+.ask-heading-user {
+	    display: inline-flex;
+	       flex-flow: row;
+    flex-direction: row;
+    flex-wrap: initial;
+}
+
+.ask-heading-topic {
+	flex: 0 0 auto;
+}

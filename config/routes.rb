@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   resources :topics
-  resources :asks
+
+  resources :asks do 
+      resources :replies
+    end
+  get '/asks/:ask_id/replies/edit/:id' => 'replies#edit'
   mount Attachinary::Engine => "/attachinary"
   devise_for :users, controllers: {
         sessions: 'users/sessions',
@@ -16,9 +20,8 @@ Rails.application.routes.draw do
 
 
     get 'ask/index'
-    resources :ask do 
-      resource :replies
-    end
+    
+
 
   get "/team" => "pages#team"
   get "/contact" => "pages#join_us"

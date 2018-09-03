@@ -17,13 +17,14 @@ gem "coffee-rails"
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+gem 'bootstrap'
 gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'faker'
 
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks'
 gem 'bulma-rails', '~> 0.6.2'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'rolify', '~> 5.2'
@@ -35,6 +36,7 @@ gem 'coderay', '~> 1.1', '>= 1.1.2'
 
 group :development, :test do
   gem 'pry-byebug'
+  gem 'byebug'
   gem 'pry-rails'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'

@@ -1,12 +1,12 @@
 class RepliesController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_reply, only [:edit, :update, :show, :destroy]
-	before_action :set_ask, only [:create, :edit, :show, :update, :destroy]
+	before_action :set_reply, only: [:edit, :update, :show, :destroy]
+	before_action :set_ask, only: [:create, :edit, :show, :update, :destroy]
 
 
 
 	def create
-		@reply = @ask.replies.create(params[:reply]).permit(:reply, :ask_id)
+		@reply = @ask.replies.create(params[:reply].permit(:reply, :ask_id))
 		@reply.user_id = current_user.id
 
 		respond_to do |format|
@@ -32,7 +32,8 @@ class RepliesController < ApplicationController
 	end
 
 	 def edit
-    @ask = ask.find(params[:ask_id])
+	 	puts "%%%% params: #{params.inspect}"
+    @ask = Ask.find(params[:ask_id])
     @reply = @ask.replies.find(params[:id])
   	end
 
@@ -48,6 +49,9 @@ class RepliesController < ApplicationController
       	end
   	end
 
+  	def show
+  	end
+
 	private
 
 	def set_ask 
@@ -59,6 +63,6 @@ class RepliesController < ApplicationController
 	end
 
 	def reply_params
-		params.require(:reply), permit(:reply)
+		params.require(:reply).permit(:reply)
 	end
 end

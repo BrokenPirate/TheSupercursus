@@ -2,23 +2,25 @@
 <%= simple_form_for(@ask) do |f| %>
   <%= f.error_notification %>
 
-  <div class="field">
+<h1>Ask recommendation</h1>  
+
+  <div class="field question">
     <div class="control">
-      <%= f.input :title, required: true, input_html: { class: 'input' }, wrapper: false, label_html: { class: "label" } %>
+      <%= f.input :title, required: true, input_html: { class: 'input' }, wrapper: false, label_html: { class: "label" }, placeholder: "Ask for a course recommendation - ex: What is the best course to work as a travel video maker ?" %>
     </div>
   </div>
 
-  <div class="field">
+  <div class="field description">
     <div class="control">
-      <%= f.input :content, required: true, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: "label" } %>
+      <%= f.input :content, required: true, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: "label" }, placeholder: "Add context or clarification - ex: I'm looking for a course to work with tourism industry and market my skills" %>
     </div>
   </div>
 
-  <div class="field">
+  <div class="field wtopic">
     <label class="label">Channel</label>
     <div class="control has-icons-left">
       <span class="select">
-        <%= f.input_field :topic, collection:@topics.map { |c| [c.topic, c.id] }, prompt: "Select topic" %>
+        <%= f.input_field :topic_id, collection:@topics.map { |c| [c.topic, c.id] }, prompt: "Select topic" %>
       </span>
       <span class="icon is-small is-left">
         <i class="fa fa-tag"></i>
@@ -32,4 +34,5 @@
     </div>
   </div>
 
+<%= link_to 'Back', asks_path %>
 <% end %>

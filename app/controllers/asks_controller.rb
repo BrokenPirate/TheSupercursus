@@ -13,7 +13,7 @@ class AsksController < ApplicationController
   # GET /asks/1.json
   def show
     @asks = Ask.all.order('created_at desc')
-    @asks = Ask.find(params[:id])
+    @ask = Ask.find(params[:id])
   end
 
   # GET /asks/new
@@ -28,8 +28,8 @@ class AsksController < ApplicationController
   # POST /asks
   # POST /asks.json
   def create
+    @topics  = Topic.all
     @ask = current_user.asks.build(ask_params)
-
     respond_to do |format|
       if @ask.save
         format.html { redirect_to @ask, notice: 'Ask was successfully created.' }

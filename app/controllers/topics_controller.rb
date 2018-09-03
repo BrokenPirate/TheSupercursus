@@ -27,7 +27,9 @@ class TopicsController < ApplicationController
   # POST /topics
   # POST /topics.json
   def create
-    @topic = Topic.new(topic_params)
+    puts " %%%% #{topic_params.inspect}"
+    @topic = Topic.new(topic_params)  
+    @ask.topic = @topic
 
     respond_to do |format|
       if @topic.save

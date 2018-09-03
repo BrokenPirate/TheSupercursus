@@ -8,7 +8,7 @@
     <% @asks.each do |ask| %>
       <div class="columns bb-not-last pv10">
         <div class="column is-1">
-          <img src="http://placehold.it/50x50" alt="" class="avatar ask">
+          <img src="http://placehold.it/60x60" alt="" class="avatar ask">
 
 
 
@@ -19,11 +19,11 @@
           <% end %>
           <div class="content">
             <%= truncate(ask.content, length: 140) %>
-            <p><em><small>Posted <%= time_ago_in_words(ask.created_at) %> ago in
-              <% if @topic %>
+            <p><em><small><%= time_ago_in_words(ask.created_at) %> ago in
+              <% if ask.topic.present? %>
                 <%= link_to ask.topic.topic, ask.topic %>
               <% end %>
-              by <%= ask.user_id.username %>
+              by <%= link_to ask.user.username unless ask.user.blank?   %>
               </small>
               </em>
             </p>
